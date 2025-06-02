@@ -1,73 +1,76 @@
 /* src/components/ItemCount/ItemCount.css */
 .item-count {
   display: flex;
-  flex-direction: column; /* Organiza los elementos en columna */
-  align-items: center; /* Centra los elementos horizontalmente */
-  gap: 1rem; /* Espacio entre los elementos internos */
-  margin-top: 1rem; /* Margen superior */
-  padding: 1rem; /* Relleno interno */
-  border: 1px solid #eee; /* Borde sutil */
-  border-radius: 8px; /* Bordes redondeados, tomado de index.css button */ /* */
-  background-color: #f9f9f9; /* Color de fondo claro, tomado de index.css button @media light */ /* */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px; /* */
+  background-color: #f9f9f9; /* Fondo claro por defecto */ /* */
 }
 
 .item-count .controls {
   display: flex;
-  align-items: center; /* Centra verticalmente los controles */
-  gap: 1rem; /* Espacio entre los botones de control y el número */
+  align-items: center;
+  gap: 1rem;
 }
 
 .item-count .controls button {
-  padding: 0.6em 1.2em; /* Relleno, tomado de index.css button */ /* */
-  font-size: 1em; /* Tamaño de fuente, tomado de index.css button */ /* */
-  background-color: #1a1a1a; /* Color de fondo, tomado de index.css button */ /* */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 4px; /* Bordes ligeramente redondeados */
-  cursor: pointer; /* Cursor de mano */
+  padding: 0.6em 1.2em; /* */
+  font-size: 1em; /* */
+  background-color: #1a1a1a; /* Botones oscuros por defecto */ /* */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .item-count .controls button:disabled {
-  background-color: #ccc; /* Color para botones deshabilitados */
-  cursor: not-allowed; /* Cursor no permitido */
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .item-count .controls span {
-  font-size: 1.2em; /* Tamaño de fuente para la cantidad */
-  min-width: 30px; /* Ancho mínimo para que no cambie de tamaño */
-  text-align: center; /* Cantidad centrada */
+  font-size: 1.2em;
+  min-width: 30px;
+  text-align: center;
+  color: #213547; /* <-- AÑADIDO: Color oscuro explícito para el número */ /* */
+  font-weight: 500; /* Opcional: hacerlo un poco más visible */
 }
 
 .add-to-cart-button {
-  padding: 0.8em 1.5em; /* Relleno un poco más grande */
-  font-size: 1em; /* Tamaño de fuente */
-  background-color: #646cff; /* Color principal, tomado de index.css a */ /* */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 8px; /* Bordes redondeados, tomado de index.css button */ /* */
-  cursor: pointer; /* Cursor de mano */
-  transition: background-color 0.25s; /* Transición suave, tomado de index.css button */ /* */
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  background-color: #646cff; /* */
+  color: white;
+  border: none;
+  border-radius: 8px; /* */
+  cursor: pointer;
+  transition: background-color 0.25s; /* */
 }
 
 .add-to-cart-button:hover {
-  background-color: #535bf2; /* Color al pasar el mouse, tomado de index.css a:hover */ /* */
+  background-color: #535bf2; /* */
 }
 
 .add-to-cart-button:disabled {
-  background-color: #aaa; /* Color para botón deshabilitado */
-  cursor: not-allowed; /* Cursor no permitido */
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 
 /* Estilos para el tema claro */
 @media (prefers-color-scheme: light) { /* */
   .item-count {
-    border-color: #ddd; /* Borde más oscuro en tema claro */
-    background-color: #ffffff; /* Fondo blanco en tema claro, tomado de index.css @media light :root */ /* */
+    border-color: #ddd;
+    background-color: #ffffff; /* */
   }
   .item-count .controls button {
-    background-color: #333; /* Botones de control más oscuros en tema claro */
+    background-color: #333; /* Botones oscuros en tema claro */
   }
   .item-count .controls button:disabled {
-    background-color: #ddd; /* Botones deshabilitados más claros */
+    background-color: #ddd;
   }
+  /* El color del span ya está definido arriba y debería funcionar bien en tema claro */
 }

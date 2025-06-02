@@ -1,40 +1,46 @@
 /* src/components/NavBar/NavBar.css */
 .navbar {
-  background-color: #333; /* Color de fondo oscuro */
-  padding: 1rem 2rem; /* Relleno interno */
-  display: flex; /* Organiza los elementos en línea */
-  justify-content: space-between; /* Espacio entre la marca y las categorías */
-  align-items: center; /* Centra verticalmente los elementos */
-  margin-bottom: 20px; /* Margen inferior para separar del contenido */
+  background-color: #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Mantiene la marca a la izq y el widget a la der */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Nuevo: Contenedor para la marca y las categorías */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Espacio entre la marca y las categorías */
 }
 
 .navbar-brand {
-  color: #fff; /* Color del texto de la marca */
-  font-size: 1.5rem; /* Tamaño de fuente de la marca */
-  text-decoration: none; /* Sin subrayado */
-  font-weight: bold; /* Texto en negrita */
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .navbar-categories {
-  display: flex; /* Organiza los enlaces de categoría en línea */
-  gap: 1rem; /* Espacio entre los enlaces de categoría */
+  display: flex;
+  gap: 1rem;
 }
 
 .nav-link {
-  color: #ddd; /* Color del texto de los enlaces */
-  text-decoration: none; /* Sin subrayado */
-  padding: 0.5rem 1rem; /* Relleno interno de los enlaces */
-  border-radius: 4px; /* Bordes redondeados */
-  transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
+  color: #ddd;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-link:hover {
-  background-color: #555; /* Color de fondo al pasar el mouse */
-  color: #fff; /* Color del texto al pasar el mouse */
+  background-color: #555;
+  color: #fff;
 }
 
-/* Estilo para el enlace activo */
 .nav-link.active {
-  background-color: #646cff; /* Color de fondo del enlace activo (tomado de index.css) */ /* */
-  color: #fff; /* Color del texto del enlace activo */
+  background-color: #646cff; /* */
+  color: #fff;
 }

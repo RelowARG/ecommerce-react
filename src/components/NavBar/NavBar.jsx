@@ -1,46 +1,43 @@
 // src/components/NavBar/NavBar.jsx
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom'; // NavLink para estilos activos
-import { getCategories } from '../../mockData'; // Función para obtener categorías
-import './NavBar.css'; // Estilos para NavBar
+import { Link, NavLink } from 'react-router-dom';
+import { getCategories } from '../../mockData';
+import CartWidget from '../CartWidget/CartWidget'; // Importar CartWidget
+import './NavBar.css';
 
 const NavBar = () => {
-  const [categories, setCategories] = useState([]); // Estado para almacenar las categorías
+  const [categories, setCategories] = useState([]);
 
-  // useEffect para cargar las categorías cuando el componente se monta
   useEffect(() => {
     getCategories().then(cats => setCategories(cats));
-  }, []); // El array vacío asegura que se ejecute solo una vez
+  }, []);
 
   return (
     <nav className="navbar">
-      {/* Enlace al inicio (marca de la tienda) */}
-      <Link to="/" className="navbar-brand">
-        MiTienda
-      </Link>
-      {/* Contenedor para los enlaces de categorías */}
-      <div className="navbar-categories">
-        {/* Enlace a "Todos los Productos" */}
-        <NavLink
-          to="/"
-          className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-          end // 'end' asegura que solo esté activo en la ruta exacta "/"
-        >
-          Todos los Productos
-        </NavLink>
-        {/* Mapea las categorías para crear un NavLink para cada una */}
-        {categories.map(cat => (
+      <div className="navbar-left"> {/* Nuevo div para agrupar marca y categorías */}
+        <Link to="/" className="navbar-brand">
+          MiTienda
+        </Link>
+        <div className="navbar-categories">
           <NavLink
-            key={cat} // Clave única para cada enlace
-            to={`/category/${cat}`} // Ruta dinámica para la categoría
+            to="/"
             className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            end
           >
-            {/* Capitaliza la primera letra de la categoría */}
-            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            Todos los Productos
           </NavLink>
-        ))}
+          {categories.map(cat => (
+            <NavLink
+              key={cat}
+              to={`/category/${cat}`}
+              className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            >
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </NavLink>
+          ))}
+        </div>
       </div>
-      {/* Aquí se podría agregar un futuro CartWidget */}
+      <CartWidget /> {/* Agregar el CartWidget aquí */}
     </nav>
   );
 };

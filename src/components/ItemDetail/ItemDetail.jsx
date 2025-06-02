@@ -1,36 +1,46 @@
 // src/components/ItemDetail/ItemDetail.jsx
-import ItemCount from '../ItemCount/ItemCount'; // Componente para manejar la cantidad
-import './ItemDetail.css'; // Estilos para ItemDetail
+import ItemCount from '../ItemCount/ItemCount';
+import { useCart } from '../../context/CartContext';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './ItemDetail.css';
 
-// Props: product (objeto con los detalles del producto)
 const ItemDetail = ({ product }) => {
-  // Si no hay datos del producto, muestra un mensaje
+  const { addItem, isInCart } = useCart();
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+
   if (!product) {
     return <p>Detalles del producto no encontrados.</p>;
   }
 
-  // Función que se ejecuta al agregar el producto al carrito
   const handleAddToCart = (quantity) => {
-    console.log(`Agregados ${quantity} de ${product.name} al carrito.`);
-    // Aquí normalmente se despacharía una acción para actualizar el estado del carrito
+    addItem(product, quantity);
+    setFeedbackMessage(`${quantity} "${product.name}" agregado(s) al carrito!`);
+    setTimeout(() => setFeedbackMessage(''), 3000);
   };
 
   return (
     <article className="item-detail">
-      {/* Contenedor de la imagen del producto */}
       <div className="item-detail-image-container">
         <img src={product.image} alt={product.name} className="item-detail-image" />
       </div>
-      {/* Contenedor de la información del producto */}
       <div className="item-detail-info">
         <h2 className="item-detail-name">{product.name}</h2>
         <p className="item-detail-category">Categoría: {product.category}</p>
         <p className="item-detail-description">{product.description}</p>
         <p className="item-detail-price">${product.price}</p>
         <p className="item-detail-stock">Stock Disponible: {product.stock}</p>
-        {/* Muestra ItemCount si hay stock, sino un mensaje de "Sin Stock" */}
+
+        {feedbackMessage && <p className="feedback-message">{feedbackMessage}</p>}
+
         {product.stock > 0 ? (
-          <ItemCount stock={product.stock} initial={1} onAdd={handleAddToCart} />
+          !isInCart(product.id) ? (
+            <ItemCount stock={product.stock} initial={1} onAdd={handleAddToCart} />
+          ) : (
+            <Link to="/cart" className="button-primary go-to-cart-button"> {/* Aquí se usa Link */}
+              Ir al Carrito
+            </Link>
+          )
         ) : (
           <p className="out-of-stock-message">Sin Stock</p>
         )}

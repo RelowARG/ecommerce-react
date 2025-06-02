@@ -86,4 +86,28 @@
   .out-of-stock-message {
     color: #ff7b77; /* Rojo más brillante para el tema oscuro */
   }
+}.feedback-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #d4edda; /* Verde suave para éxito */
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.go-to-cart-button {
+  margin-top: 1rem;
+  display: inline-block; /* Para que el padding y el text-align funcionen bien */
+  text-align: center;
+}
+
+
+@media (prefers-color-scheme: dark) {
+ /* ... otros estilos de ItemDetail.css @media dark ... */
+  .feedback-message {
+    background-color: #1e4c25;
+    color: #c3e6cb;
+    border-color: #285c32;
+  }
 }

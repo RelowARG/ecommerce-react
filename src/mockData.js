@@ -6,7 +6,7 @@ export const products = [
     id: '1',
     name: 'Laptop Pro 15"',
     price: 1200,
-    category: 'electronics', // Categoría: electrónica
+    category: 'Electrónica', // Categoría: electrónica
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=LaptopPro', // URL de placeholder
     description: 'Laptop de alto rendimiento para profesionales.',
     stock: 10, // Cantidad disponible en stock
@@ -15,7 +15,7 @@ export const products = [
     id: '2',
     name: 'Smartphone X',
     price: 800,
-    category: 'electronics', // Categoría: electrónica
+    category: 'Electrónica', // Categoría: electrónica
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=SmartphoneX', // URL de placeholder
     description: 'Smartphone de última generación con funciones avanzadas.',
     stock: 15,
@@ -24,7 +24,7 @@ export const products = [
     id: '3',
     name: 'Remera Clásica',
     price: 25,
-    category: 'apparel', // Categoría: indumentaria
+    category: 'Indumentaria', // Categoría: indumentaria
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=RemeraClasica', // URL de placeholder
     description: 'Remera de algodón cómoda.',
     stock: 50,
@@ -33,7 +33,7 @@ export const products = [
     id: '4',
     name: 'Zapatillas Deportivas',
     price: 100,
-    category: 'footwear', // Categoría: calzado
+    category: 'Calzado', // Categoría: calzado
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=Zapatillas', // URL de placeholder
     description: 'Zapatillas deportivas ligeras para un rendimiento óptimo.',
     stock: 25,
@@ -42,7 +42,7 @@ export const products = [
     id: '5',
     name: 'Auriculares Inalámbricos',
     price: 150,
-    category: 'electronics', // Categoría: electrónica
+    category: 'Electrónica', // Categoría: electrónica
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=Auriculares', // URL de placeholder
     description: 'Auriculares inalámbricos con cancelación de ruido.',
     stock: 20,
@@ -51,7 +51,7 @@ export const products = [
     id: '6',
     name: 'Jeans de Denim',
     price: 60,
-    category: 'apparel', // Categoría: indumentaria
+    category: 'Indumentaria', // Categoría: indumentaria
     image: 'https://placehold.co/600x400/EFEFEF/AAAAAA&text=JeansDenim', // URL de placeholder
     description: 'Jeans de denim elegantes y duraderos.',
     stock: 30,
