@@ -1,0 +1,89 @@
+/* src/components/ItemDetail/ItemDetail.css */
+.item-detail {
+  display: flex; /* Permite organizar imagen e info lado a lado en pantallas grandes */
+  flex-direction: column; /* Por defecto en columna para móviles */
+  gap: 2rem; /* Espacio entre imagen e info */
+  padding: 2rem; /* Relleno, igual a App.css #root padding */ /* */
+  margin: 1rem auto; /* Margen y centrado horizontal */
+  max-width: 900px; /* Ancho máximo ajustado para más contenido */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.item-detail-image-container {
+  flex: 1; /* Permite que la imagen ocupe una parte del espacio */
+  text-align: center; /* Centra la imagen si es más pequeña que el contenedor */
+}
+
+.item-detail-image {
+  max-width: 100%; /* Imagen responsiva */
+  max-height: 400px; /* Altura máxima para la imagen */
+  object-fit: contain; /* Asegura que toda la imagen sea visible sin recortar */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.item-detail-info {
+  flex: 2; /* Permite que la información ocupe más espacio */
+  display: flex;
+  flex-direction: column; /* Organiza la información verticalmente */
+  gap: 0.8rem; /* Espacio entre los elementos de información */
+}
+
+.item-detail-name {
+  font-size: 2.2em; /* Tamaño de fuente para el nombre, similar a h1 */ /* */
+  line-height: 1.1; /* Interlineado, similar a h1 */ /* */
+  margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+.item-detail-category,
+.item-detail-stock {
+  font-size: 1em; /* Tamaño de fuente estándar */
+  color: #555; /* Color gris oscuro */
+}
+
+.item-detail-description {
+  font-size: 1.1em; /* Ligeramente más grande para la descripción */
+  line-height: 1.6; /* Interlineado para mejor legibilidad */
+  color: #333; /* Color de texto principal */
+}
+
+.item-detail-price {
+  font-size: 1.8em; /* Tamaño de fuente grande para el precio */
+  font-weight: bold; /* Precio en negrita */
+  color: #646cff; /* Color del precio, tomado de index.css a */ /* */
+  margin-top: 0.5rem; /* Margen superior */
+  margin-bottom: 1rem; /* Margen inferior antes del ItemCount */
+}
+
+.out-of-stock-message {
+  color: #d9534f; /* Color rojo para indicar fuera de stock */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.1em; /* Tamaño de fuente */
+}
+
+/* Media query para pantallas más grandes (tablets y escritorios) */
+@media (min-width: 768px) {
+  .item-detail {
+    flex-direction: row; /* Imagen e info lado a lado */
+  }
+}
+
+/* Estilos para el tema oscuro */
+@media (prefers-color-scheme: dark) { /* */
+  .item-detail {
+    background-color: #2a2a2a; /* Un gris oscuro, consistente con otros fondos oscuros */
+    border-color: #444; /* Borde más oscuro */
+  }
+  .item-detail-name,
+  .item-detail-description {
+    color: rgba(255, 255, 255, 0.87); /* Color de texto principal en tema oscuro */ /* */
+  }
+  .item-detail-category,
+  .item-detail-stock {
+    color: #bbb; /* Color más claro para textos secundarios */
+  }
+  .out-of-stock-message {
+    color: #ff7b77; /* Rojo más brillante para el tema oscuro */
+  }
+}

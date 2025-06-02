@@ -1,0 +1,65 @@
+/* src/components/Item/Item.css */
+.item-card {
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 1em; /* Relleno, igual a App.css .card */ /* */
+  margin: 1em; /* Margen exterior */
+  width: 250px; /* Ancho fijo para cada tarjeta */
+  text-align: center; /* Texto centrado */
+  background-color: #fff; /* Fondo blanco */
+  transition: box-shadow 0.3s ease; /* Transición para la sombra */
+}
+
+.item-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra al pasar el mouse */
+}
+
+.item-card a {
+  text-decoration: inherit; /* Hereda la decoración de texto (sin subrayado por defecto) */ /* */
+  color: inherit; /* Hereda el color del texto */ /* */
+}
+
+.item-image {
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  max-height: 200px; /* Altura máxima para la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  border-radius: 4px; /* Bordes redondeados para la imagen */
+  margin-bottom: 0.5em; /* Margen inferior para la imagen */
+}
+
+.item-info {
+  padding: 0.5em; /* Relleno para la información del producto */
+}
+
+.item-name {
+  font-size: 1.2em; /* Tamaño de fuente para el nombre */
+  margin-bottom: 0.3em; /* Margen inferior para el nombre */
+  color: #333; /* Color oscuro para el nombre */
+}
+
+.item-category {
+  font-size: 0.9em; /* Tamaño de fuente para la categoría */
+  color: #777; /* Color gris para la categoría, similar a .read-the-docs */ /* */
+  margin-bottom: 0.3em; /* Margen inferior para la categoría */
+  text-transform: capitalize; /* Primera letra en mayúscula */
+}
+
+.item-price {
+  font-size: 1.1em; /* Tamaño de fuente para el precio */
+  font-weight: bold; /* Precio en negrita */
+  color: #646cff; /* Color del precio, tomado de index.css a */ /* */
+}
+
+/* Estilos para el tema oscuro */
+@media (prefers-color-scheme: dark) { /* */
+  .item-card {
+    background-color: #2f2f2f; /* Un gris oscuro, un poco más claro que el fondo general */
+    border-color: #444; /* Borde más oscuro */
+  }
+  .item-name {
+    color: rgba(255, 255, 255, 0.87); /* Color de texto principal en tema oscuro */ /* */
+  }
+  .item-category {
+    color: #aaa; /* Color más claro para la categoría en tema oscuro */
+  }
+}

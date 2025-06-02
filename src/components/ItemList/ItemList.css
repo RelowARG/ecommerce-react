@@ -1,0 +1,16 @@
+/* src/components/ItemList/ItemList.css */
+.item-list {
+  display: flex; /* Organiza los items en línea */
+  flex-wrap: wrap; /* Permite que los items pasen a la siguiente línea si no caben */
+  justify-content: center; /* Centra los items horizontalmente */
+  gap: 1rem; /* Espacio entre los items */
+  padding: 1rem; /* Relleno, similar a App.css #root padding */ /* */
+}
+
+/* Mensajes de carga o error que pueden ser usados por ItemListContainer también */
+.loading-message, .error-message {
+  text-align: center; /* Texto centrado */ /* */
+  font-size: 1.2em; /* Tamaño de fuente */
+  color: #888; /* Color gris, tomado de App.css .read-the-docs */ /* */
+  padding: 2rem; /* Relleno */ /* */
+}

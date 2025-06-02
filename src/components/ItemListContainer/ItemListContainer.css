@@ -1,0 +1,10 @@
+/* src/components/ItemListContainer/ItemListContainer.css */
+.item-list-container {
+  padding: 1rem; /* Relleno general */
+}
+
+.item-list-container h2 {
+  text-align: center; /* Título centrado */
+  margin-bottom: 1.5rem; /* Margen inferior para el título */
+  font-size: 2em; /* Tamaño de fuente para el título */
+}

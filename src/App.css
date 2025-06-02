@@ -1,8 +1,18 @@
+/* src/App.css */
+/* Estilos existentes de App.css, por ejemplo, los de .logo, .card, etc. */ /* */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%; /* Permitir que NavBar ocupe el ancho completo si es necesario */
+  margin: 0 auto; /* Centrado */
+  padding: 0; /* Quitar padding de root, se aplicará al .container si es necesario */
   text-align: center;
+}
+
+/* Nuevo contenedor para el contenido de las rutas, para mantener el padding original */
+.container {
+  max-width: 1280px; /* Ancho máximo original de #root */ /* */
+  margin: 0 auto; /* Centrado */
+  padding: 2rem; /* Padding original de #root */ /* */
 }
 
 .logo {
@@ -10,13 +20,13 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
+} /* */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-}
+} /* */
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} /* */
 
 @keyframes logo-spin {
   from {
@@ -25,18 +35,18 @@
   to {
     transform: rotate(360deg);
   }
-}
+} /* */
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} /* */
 
 .card {
   padding: 2em;
-}
+} /* */
 
 .read-the-docs {
   color: #888;
-}
+} /* */

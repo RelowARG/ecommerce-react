@@ -1,0 +1,42 @@
+/* src/components/NotFound/NotFound.css */
+.not-found-container {
+  display: flex;
+  flex-direction: column; /* Elementos en columna */
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  min-height: 70vh; /* Altura mínima para ocupar buena parte de la pantalla */
+  text-align: center; /* Texto centrado */
+  padding: 2rem; /* Relleno, igual a App.css #root padding */ /* */
+}
+
+.not-found-container h1 {
+  font-size: 3rem; /* Tamaño de fuente grande para el título */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+.not-found-container p {
+  font-size: 1.2rem; /* Tamaño de fuente para el párrafo */
+  margin-bottom: 2rem; /* Margen inferior */
+  color: #888; /* Color gris, tomado de App.css .read-the-docs */ /* */
+}
+
+.go-home-link {
+  padding: 0.8em 1.5em; /* Relleno del botón */
+  font-size: 1em; /* Tamaño de fuente del botón */
+  background-color: #646cff; /* Color de fondo, tomado de index.css a */ /* */
+  color: white; /* Color del texto del botón */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 8px; /* Bordes redondeados, tomado de index.css button */ /* */
+  transition: background-color 0.25s; /* Transición suave, tomado de index.css button */ /* */
+}
+
+.go-home-link:hover {
+  background-color: #535bf2; /* Color al pasar el mouse, tomado de index.css a:hover */ /* */
+}
+
+/* Estilos para el tema oscuro */
+@media (prefers-color-scheme: dark) { /* */
+  .not-found-container p {
+    color: #bbb; /* Párrafo más claro en tema oscuro */
+  }
+}
